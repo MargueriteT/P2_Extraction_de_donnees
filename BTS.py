@@ -19,7 +19,7 @@ def next_absolute_url():
 requeteBooksToScrape = requests.get("https://books.toscrape.com/index.html")
 scrapingBooksToScrape = BeautifulSoup(requeteBooksToScrape.text, "html.parser")
 
-# Récupérer l'URL de la catégorie book qui répertorie tout les livres
+# Récupérer l'URL de la catégorie book qui répertorie tous les livres
 all_book_category_url = scrapingBooksToScrape.find("ul", {"class": "nav nav-list"}).find_all("a")[0]
 category_link = all_book_category_url["href"]
 
